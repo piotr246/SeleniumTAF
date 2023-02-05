@@ -10,14 +10,18 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BaseDriver {
 
     private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+
     public static WebDriver getDriver() {
         return webDriver.get();
     }
 
     public static void instantiateWebDriverChrome() {
-        setWebDriver(new ChromeDriver(setChromeOptions()));}
+        setWebDriver(new ChromeDriver(setChromeOptions()));
+    }
 
-    public static void quitDriver() {webDriver.get().quit();}
+    public static void quitDriver() {
+        webDriver.get().quit();
+    }
 
     public static void instantiateWebDriverFirefox() {
         setWebDriver(new FirefoxDriver(setFirefoxOptions()));
@@ -25,7 +29,8 @@ public class BaseDriver {
     }
 
     private static void setWebDriver(WebDriver driver) {
-         webDriver.set(driver);}
+        webDriver.set(driver);
+    }
 
     private static ChromeOptions setChromeOptions() {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
@@ -44,6 +49,7 @@ public class BaseDriver {
     private static FirefoxOptions setFirefoxOptions() {
         System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
         FirefoxOptions opt = new FirefoxOptions();
+        opt.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
         return opt;
     }
 }
