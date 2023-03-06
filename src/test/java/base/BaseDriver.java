@@ -6,6 +6,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.io.IOException;
+import java.util.Properties;
+
 
 public class BaseDriver {
 
@@ -13,6 +16,22 @@ public class BaseDriver {
 
     public static WebDriver getDriver() {
         return webDriver.get();
+    }
+
+    public static void instantiateWebDriver() {
+        Properties prop = new Properties();
+        try {
+            prop.load(BaseDriver.class.getClassLoader().getResourceAsStream("MyProject.properties"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String browserName = prop.getProperty("browserName");
+
+        if (browserName.equalsIgnoreCase("chrome")) {
+            BaseDriver.instantiateWebDriverChrome();
+        } else if (browserName.equalsIgnoreCase("firefox")) {
+            BaseDriver.instantiateWebDriverFirefox();
+        }
     }
 
     public static void instantiateWebDriverChrome() {

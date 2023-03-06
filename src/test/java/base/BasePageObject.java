@@ -8,7 +8,7 @@ public abstract class BasePageObject {
     WebDriver driver;
 
     public BasePageObject() {
-        //BaseDriver.instantiateWebDriverChrome();
+        BaseDriver.instantiateWebDriverChrome();
         PageFactory.initElements(BaseDriver.getDriver(), this);
         this.driver = driver;
     }

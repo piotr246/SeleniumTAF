@@ -8,14 +8,14 @@ public abstract class BaseTest {
         BaseDriver.getDriver().get(url);
     }
 
-    public void open(String url, String browser) {
-        if (browser.equalsIgnoreCase("chrome")) {
-            BaseDriver.instantiateWebDriverChrome();
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            BaseDriver.instantiateWebDriverFirefox();
-        }
-        open(url);
-    }
+//    public void open(String url, String browser) {
+//        if (browser.equalsIgnoreCase("chrome")) {
+//            BaseDriver.instantiateWebDriverChrome();
+//        } else if (browser.equalsIgnoreCase("firefox")) {
+//            BaseDriver.instantiateWebDriverFirefox();
+//        }
+//        open(url);
+//    }
 
 
     @AfterEach

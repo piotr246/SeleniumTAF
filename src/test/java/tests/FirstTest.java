@@ -12,8 +12,8 @@ public class FirstTest extends BaseTest {
 
     @Test
     public void fT() {
-       // open(Constants.INSTAGRAM_URL);
-        open(Constants.INSTAGRAM_URL, "chrome");
+        open(Constants.INSTAGRAM_URL);
+        //open(Constants.INSTAGRAM_URL, "chrome");
         loginPage.forgetPasswordButtonClick();
     }
 }
