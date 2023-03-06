@@ -13,7 +13,7 @@ public class FirstTest extends BaseTest {
     @Test
     public void fT() {
         open(Constants.INSTAGRAM_URL);
-        ///open(Constants.GOOGLE_URL,$browser);  //pytanie3
+        //open(Constants.INSTAGRAM_URL, "chrome");
         loginPage.forgetPasswordButtonClick();
     }
 }

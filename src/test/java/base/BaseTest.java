@@ -8,17 +8,15 @@ public abstract class BaseTest {
         BaseDriver.getDriver().get(url);
     }
 
-                      // TUTAJ PROBY IFOLOGIA
-
-//    @BeforeEach
-//    public void beforeTestMethod(String browser, String url) {
+//    public void open(String url, String browser) {
 //        if (browser.equalsIgnoreCase("chrome")) {
 //            BaseDriver.instantiateWebDriverChrome();
 //        } else if (browser.equalsIgnoreCase("firefox")) {
 //            BaseDriver.instantiateWebDriverFirefox();
 //        }
-//        BaseDriver.getDriver().get(url);
+//        open(url);
 //    }
+
 
     @AfterEach
     public void afterTestMethod() {
